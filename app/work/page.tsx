@@ -57,21 +57,21 @@ const Projects = [
 function Work() {
   const [project, setProject] = useState(Projects[0])
 
-  const handleSlideChange = (swiper) => {
-    setProject(Projects[swiper.activeIndex])
+  const handleSlideChange = (swiper: { activeIndex: string | number; }) => {
+    setProject(Projects[swiper.activeIndex as number])
   }
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{ 
+      animate={{
         opacity: 1,
         transition: {
           delay: 2.4,
           duration: 0.4,
-          ease:'easeIn'
+          ease: 'easeIn'
         }
-        }}
+      }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
