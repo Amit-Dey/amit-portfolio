@@ -9,7 +9,7 @@ const socials = [
     { icon: <FaTwitter />, path: '' },
 ]
 
-const Social = ({ containerStyles, iconStyles }) => {
+const Social = ({ containerStyles, iconStyles }: { containerStyles: string, iconStyles: string }) => {
     return <div className={containerStyles}>
         {socials.map((social, index) => (
             <Link key={index} href={social.path} className={iconStyles}>
