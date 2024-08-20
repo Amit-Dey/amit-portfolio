@@ -24,12 +24,12 @@ const Projects = [
   {
     num: "01",
     catagory: "Web Development",
-    title: "Portfolio",
-    description: "My personal portfolio website.",
-    stack: [{ name: "Next.js" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
-    image: "/assets/work/thumb1.png",
-    live: "https://www.google.com",
-    github: "https://www.google.com",
+    title: "Simple Zerodha App",
+    description: "It's allows users to perform basic trading operations.",
+    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Javascript" }],
+    image: "/assets/work/zerodha.png",
+    live: "https://amit-dey.github.io/Simple-Zerodha-App/",
+    github: "https://github.com/Amit-Dey/Simple-Zerodha-App",
   },
   {
     num: "02",
@@ -86,6 +86,11 @@ function Work() {
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.catagory} project
               </h2>
+              {/* Project Title */}
+              <h3 className="text-3xl font-bold text-white/40">
+                {project.title}
+              </h3>
+
               {/* Project description */}
               <p className="text-white/60">
                 {project.description}
