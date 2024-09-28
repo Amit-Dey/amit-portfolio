@@ -11,7 +11,12 @@ import Stats from "@/components/Stats";
 const Home = () => {
 
   const handleClick = () => {
-    window.open('/assets/cv/AmitDey_cv.pdf', '_blank');
+    const link = document.createElement('a');
+    link.href = '/assets/cv/AmitDey_cv.pdf'; // Link to the PDF
+    link.download = 'AmitDey_cv.pdf'; // Default name for the downloaded file
+    document.body.appendChild(link); // Append the link to the body
+    link.click(); // Simulate click on the link
+    document.body.removeChild(link); // Remove the link after downloading
   }
 
   return (
