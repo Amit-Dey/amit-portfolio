@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
@@ -7,6 +9,11 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
+
+  const handleClick = () => {
+    window.open('./assets/cv/AmitDey_cv.pdf', '_blank');
+  }
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -25,6 +32,7 @@ const Home = () => {
                 variant="outline"
                 size="lg"
                 className="uppercase flex items-center gap-2"
+                onClick={handleClick}
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />

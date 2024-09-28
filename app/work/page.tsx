@@ -23,6 +23,16 @@ import WorkSliderButtons from '@/components/WorkSliderButtons';
 const Projects = [
   {
     num: "01",
+    catagory: "AI-Feedback",
+    title: "AI-Powered Real-Time Feedback System",
+    description: "The system provides real-time sentiment analysis of user feedback using AI, with a clean and responsive UI.",
+    stack: [{name: "React.js"}, {name: "Tailwind"}, {name: "Node.js"}, {name: "Express.js"}, {name: "MongoDB"}],
+    image: "/assets/work/thumFeedback.png",
+    live: "https://ai-feedback-frontend-git-main-amit-deys-projects.vercel.app/",
+    github: "https://github.com/Amit-Dey/AI-Feedback-Frontend.git",
+  },
+  {
+    num: "02",
     catagory: "Web Development",
     title: "Simple Zerodha App",
     description: "It's allows users to perform basic trading operations.",
@@ -32,7 +42,7 @@ const Projects = [
     github: "https://github.com/Amit-Dey/Simple-Zerodha-App",
   },
   {
-    num: "02",
+    num: "03",
     catagory: "Full Stack Development",
     title: "E-commerce",
     description: "A full stack e-commerce website.",
@@ -42,14 +52,14 @@ const Projects = [
     github: "https://www.google.com",
   },
   {
-    num: "03",
+    num: "04",
     catagory: "backend Development",
-    title: "Blog",
-    description: "A full stack blog website.",
-    stack: [{ name: "Next.js" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
-    image: "/assets/work/thumb3.png",
-    live: "https://www.google.com",
-    github: "https://www.google.com",
+    title: "Ecommerce Project using Laravel",
+    description: "This is a Laravel-based web application for managing products, orders, and users in an eCommerce platform.",
+    stack: [{ name: "Laravel" }, { name: "MySQL" }, { name: "Blade" }, { name: "JavaScript" }],
+    image: "/assets/work/thumEcommarce.png",
+    live: "https://github.com/Amit-Dey/EcommerceProject.git",
+    github: "https://github.com/Amit-Dey/EcommerceProject.git",
   }
 ]
 
@@ -67,8 +77,8 @@ function Work() {
       animate={{
         opacity: 1,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
+          delay: 0.3,
+          duration: 0.8,
           ease: 'easeIn'
         }
       }}
