@@ -11,7 +11,7 @@ import Stats from "@/components/Stats";
 const Home = () => {
 
   const handleClick = () => {
-    window.open('./assets/cv/AmitDey_cv.pdf', '_blank');
+    window.open('/assets/cv/AmitDey_cv.pdf', '_blank');
   }
 
   return (
