@@ -34,7 +34,7 @@ const Stats = () => {
                             <CountUp
                                 end={stat.num}
                                 duration={5}
-                                delay={2}
+                                delay={0.5}
                                 className="text-4xl xl:text-6xl font-extrabold"
                             />
                             <p className={`${stat.text.length < 15 ? "max-w-[100px]" :
