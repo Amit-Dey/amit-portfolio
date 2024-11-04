@@ -19,19 +19,19 @@ const Photo = () => {
                 }}
             >
                 {/* Image */}
-                <motion.div className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'
+                <motion.div className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-plus-darker absolute'
                     initial={{ opacity: 0 }}
                     animate={{
                         opacity: 1,
                         transition: {
-                            delay: 2.4,
+                            delay: 1,
                             duration: 0.4,
                             ease: 'easeInOut'
                         }
                     }}
                 >
                     <Image
-                        src='/assets/photo.png'
+                        src='/assets/Amit.png'
                         alt='Amit Dey'
                         priority
                         quality={100}
