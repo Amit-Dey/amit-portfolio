@@ -31,7 +31,7 @@ const Photo = () => {
                     }}
                 >
                     <Image
-                        src='/assets/Amit.png'
+                        src='/assets/AmitDey.png'
                         alt='Amit Dey'
                         priority
                         quality={100}

@@ -25,7 +25,7 @@ const Home = () => {
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <a
-                href="/assets/cv/AmitDey_CV.pdf"
+                href="/assets/cv/Amit_Dey_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
