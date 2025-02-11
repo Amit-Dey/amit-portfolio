@@ -3,7 +3,7 @@
 import { Description } from "@radix-ui/react-dialog";
 import { title } from "process";
 import {
-  FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs
+  FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaDatabase, FaDocker
 } from "react-icons/fa"
 
 import {
@@ -57,20 +57,31 @@ const experience = {
   description: "I have worked on a variety of projects including websites, web applications, and mobile apps. I have experience with both front-end and back-end development, and I am always looking to learn new things and improve my skills.",
   items: [
     {
-      company: "Tech Solutions",
-      position: "Full Stack Developer",
-      duration: "2024 - Present",
+      company: "Ranx",
+      position: "Software Engineer",
+      duration: "Jan '25 - Present",
     },
     {
-      company: "Web Design Co.",
-      position: "Front End Developer",
-      duration: "2022 - 2024",
+      company: "Ranx",
+      position: "Software Engineer Intern",
+      duration: "Oct '24 - Dec '24",
     },
     {
-      company: "Tech Solutions",
-      position: "Full Stack Developer",
-      duration: "2020 - 2022",
+      company: "International Islamic University Chittagong",
+      position: "Academic Research",
+      duration: "Jun ‘24 - Nov ‘24",
     },
+    {
+      company: "International Islamic University Chittagong",
+      position: "Teaching Assistant",
+      duration: "Jan ‘24 - Jun ‘24",
+    },
+    {
+      company: "Solvrz",
+      position: "Software Engineer Intern",
+      duration: "Oct ‘23 - Dec ‘23",
+    },
+
   ]
 }
 
@@ -148,6 +159,14 @@ const skills = {
       name: "Figma",
       icon: <FaFigma />,
     },
+    {
+      name: "PostgreSQL",
+      icon: <FaDatabase />,
+    },
+    {
+      name: "Docker",
+      icon: <FaDocker />,
+    },
   ]
 }
 
@@ -165,7 +184,7 @@ function Resume() {
         opacity: 1,
         transition: { delay: 0.3, duration: 0.8, ease: 'easeIn' }
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-8"
     >
       <div className="container mx-auto">
         <Tabs

@@ -166,8 +166,8 @@ function Work() {
                       <Image
                         src={item.image}
                         fill
-                        className='object-cover'
-                        alt=''
+                        className='object-contain'
+                        alt='Project Image'
                       />
                     </div>
                   </div>

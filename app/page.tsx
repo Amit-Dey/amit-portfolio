@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import { useEffect } from "react";
+
 
 // components
 import Social from "@/components/Social";
@@ -9,6 +11,21 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
+
+
+  // if scroll reached the bottom of the page move to the next page
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  //       window.location.href = '/services'
+  //     }
+  //   }
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
+
+
 
   return (
     <section className="h-full">
