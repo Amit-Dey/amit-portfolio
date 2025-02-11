@@ -24,12 +24,12 @@ const Projects = [
   {
     num: "01",
     catagory: "AI-Feedback",
-    title: "AI-Powered Real-Time Feedback System",
+    title: "SentimentAI – Real-Time Feedback Analysis",
     description: "The system provides real-time sentiment analysis of user feedback using AI, with a clean and responsive UI.",
     stack: [{name: "React.js"}, {name: "Tailwind"}, {name: "Node.js"}, {name: "Express.js"}, {name: "MongoDB"}],
     image: "/assets/work/thumFeedback.png",
     live: "https://ai-feedback-frontend-git-main-amit-deys-projects.vercel.app/",
-    github: "https://github.com/Amit-Dey/AI-Feedback-Frontend.git",
+    github: "https://github.com/Amit-Dey/SentimentAI",
   },
   {
     num: "02",
@@ -43,20 +43,20 @@ const Projects = [
   },
   {
     num: "03",
-    catagory: "Full Stack Development",
-    title: "E-commerce",
-    description: "A full stack e-commerce website.",
-    stack: [{ name: "Next.js" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
-    image: "/assets/work/thumb2.png",
-    live: "https://www.google.com",
-    github: "https://www.google.com",
+    catagory: "AI-driven web",
+    title: "Promptify",
+    description: "An AI-driven web app that generates creative prompts for writing, brainstorming, and idea generation.",
+    stack: [{ name: "Next.js" }, { name: "Framer Motion" }, { name: "Tailwind CSS" },{ name: "MongoDB" } ],
+    image: "/assets/work/Promptify.png",
+    live: "https://promptify-six-dun.vercel.app/",
+    github: "https://github.com/Amit-Dey/Promptify",
   },
   {
     num: "04",
     catagory: "backend Development",
-    title: "Ecommerce Project using Laravel",
-    description: "This is a Laravel-based web application for managing products, orders, and users in an eCommerce platform.",
-    stack: [{ name: "Laravel" }, { name: "MySQL" }, { name: "Blade" }, { name: "JavaScript" }],
+    title: "EasyCart – Simplified Online Shopping Platform",
+    description: "A comprehensive e-commerce platform built using Laravel, offering functionalities like product management, user authentication, and order processing.",
+    stack: [{ name: "Laravel" }, { name: "MySQL" }, { name: "PHP" }, { name: "JavaScript" }],
     image: "/assets/work/thumEcommarce.png",
     live: "https://github.com/Amit-Dey/EcommerceProject.git",
     github: "https://github.com/Amit-Dey/EcommerceProject.git",
@@ -82,11 +82,11 @@ function Work() {
           ease: 'easeIn'
         }
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-8 xl:px-0"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto xl:pb-10">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+          <div className="w-full xl:w-[50%] xl:h-fit flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
@@ -120,7 +120,7 @@ function Work() {
               {/* Buttons */}
               <div className="flex items-center gap-4">
                 {/* Live project button */}
-                <Link href={project.live}>
+                <Link href={project.live} target='_blank'>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[70px] h-[70px] rounded-full flex bg-white/5 justify-center items-center group'>
@@ -133,7 +133,7 @@ function Work() {
                   </TooltipProvider>
                 </Link>
                 {/* GitHub project button */}
-                <Link href={project.github}>
+                <Link href={project.github} target='_blank'>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[70px] h-[70px] rounded-full flex bg-white/5 justify-center items-center group'>
