@@ -53,6 +53,16 @@ const Projects = [
   },
   {
     num: "04",
+    catagory: "Full Stack Web App",
+    title: "Medium Blog ",
+    description: "A full-stack web app that allows users to create, read, update, and delete blog posts. It also includes user authentication and authorization.",
+    stack: [{ name: "Cloudflare Workers" }, { name: "Hono" }, { name: "Tailwind CSS" }, { name: "Postgres" }],
+    image: "/assets/work/thumMediumBlog.png",
+    live: "https://medium-blog-eight-plum.vercel.app/",
+    github: "https://github.com/Amit-Dey/medium-blog/",
+  },
+  {
+    num: "05",
     catagory: "AI-driven web",
     title: "Promptify",
     description: "An AI-driven web app that generates creative prompts for writing, brainstorming, and idea generation.",
@@ -62,7 +72,7 @@ const Projects = [
     github: "https://github.com/Amit-Dey/Promptify",
   },
   {
-    num: "05",
+    num: "06",
     catagory: "Web Development",
     title: "Simple Zerodha App",
     description: "It's allows users to perform basic trading operations.",
