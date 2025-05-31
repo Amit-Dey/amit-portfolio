@@ -1,26 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import "swiper/css";
-
-import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip';
-
+import React from 'react';
+import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Components
-import WorkSliderButtons from '@/components/WorkSliderButtons';
+// Define project data with TypeScript interface for better type safety
+interface Project {
+  num: string;
+  category: string;
+  title: string;
+  description: string;
+  stack: { name: string }[];
+  image: string;
+  live: string;
+  github: string;
+}
 
-const Projects = [
+
+const projects = [
 
   {
     num: "01",
@@ -31,6 +31,7 @@ const Projects = [
     image: "/assets/work/thumChhapaGhor.png",
     live: "https://chhapa-ghor.vercel.app/",
     github: "https://github.com/Amit-Dey/chhapa-ghor",
+    date: "March 2025",
   },
   {
     num: "02",
@@ -41,6 +42,7 @@ const Projects = [
     image: "/assets/work/thumEcommarce.png",
     live: "https://github.com/Amit-Dey/EcommerceProject.git",
     github: "https://github.com/Amit-Dey/EcommerceProject.git",
+    date: "February 2023",
   },
   {
     num: "03",
@@ -50,6 +52,7 @@ const Projects = [
     image: "/assets/work/thumFeedback.png",
     live: "https://ai-feedback-frontend-git-main-amit-deys-projects.vercel.app/",
     github: "https://github.com/Amit-Dey/SentimentAI",
+    date: "January 2024",
   },
   {
     num: "04",
@@ -60,6 +63,7 @@ const Projects = [
     image: "/assets/work/thumMediumBlog.png",
     live: "https://medium-blog-eight-plum.vercel.app/",
     github: "https://github.com/Amit-Dey/medium-blog/",
+    date: "December 2023",
   },
   {
     num: "05",
@@ -70,6 +74,7 @@ const Projects = [
     image: "/assets/work/Promptify.png",
     live: "https://promptify-six-dun.vercel.app/",
     github: "https://github.com/Amit-Dey/Promptify",
+    date: "November 2023",
   },
   {
     num: "06",
@@ -80,131 +85,117 @@ const Projects = [
     image: "/assets/work/zerodha.png",
     live: "https://amit-dey.github.io/Simple-Zerodha-App/",
     github: "https://github.com/Amit-Dey/Simple-Zerodha-App",
+    date: "October 2023",
   },
 ]
 
 
-function Work() {
-  const [project, setProject] = useState(Projects[0])
-
-  const handleSlideChange = (swiper: { activeIndex: string | number; }) => {
-    setProject(Projects[swiper.activeIndex as number])
-  }
-
+const Work: React.FC = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 0.3,
-          duration: 0.8,
-          ease: 'easeIn'
-        }
-      }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.8, ease: 'easeIn' }}
       className="min-h-[80vh] flex flex-col justify-center py-8 xl:px-0"
     >
-      <div className="container mx-auto xl:pb-10">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-fit flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              {/* Project catagory */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.catagory} project
-              </h2>
-              {/* Project Title */}
-              <h3 className="text-3xl font-bold text-white/40">
-                {project.title}
-              </h3>
+      <div className="container mx-auto px-4 xl:px-0 space-y-8 lg:space-y-12">
+        {projects.map((project, index) => (
+          <div key={project.num} className="flex flex-col xl:flex-row gap-6 xl:gap-8 items-start xl:items-center bg-white/5 rounded-lg p-6 xl:p-8 shadow-lg transition-transform transform hover:scale-[1.01] group relative overflow-hidden">
+            {/* Content Section */}
+            <div className="w-full xl:w-1/2 flex flex-col justify-between order-2 xl:order-none">
+              <div className="space-y-6">
+                {/* Project Number */}
+                <div className="text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+                  {project.num}
+                </div>
 
-              {/* Project description */}
-              <p className="text-white/60">
-                {project.description}
-              </p>
-              {/* Stack */}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
-                    {item.name}
-                    {/* remove the last comma */}
-                    {index < project.stack.length - 1 && ","}
-                  </li>
-                ))}
-              </ul>
-              {/* Border */}
-              <div className="border border-white/20"></div>
-              {/* Buttons */}
-              <div className="flex items-center gap-4">
-                {/* Live project button */}
-                <Link href={project.live} target='_blank'>
+                {/* Project Category */}
+                <h2 className="text-4xl font-bold text-white group-hover:text-accent transition-colors duration-500 capitalize">
+                  {project.catagory} project
+                </h2>
+
+                {/* Project Title */}
+                <h3 className="text-2xl font-bold text-white/40">
+                  {project.title}
+                </h3>
+
+                {/* Project Date */}
+                <p className="text-white/50 text-base">
+                  {project.date}
+                </p>
+
+                {/* Project Description */}
+                <p className="text-white/60 text-base">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <ul className="flex flex-wrap gap-2">
+                  {project.stack.map((item, index2) => (
+                    <li key={index2} className="text-lg text-accent">
+                      {item.name}
+                      {index2 < project.stack.length - 1 && ','}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Divider */}
+                <div className="border-t border-white/20" />
+
+                {/* Buttons */}
+                <div className="flex items-center gap-4">
                   <TooltipProvider delayDuration={100}>
+                    {/* Live Project Button */}
                     <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full flex bg-white/5 justify-center items-center group'>
-                        <BsArrowUpRight className='text-white text-3xl group-hover:text-accent ' />
+                      <TooltipTrigger asChild>
+                        <Link href={project.live} target="_blank">
+                          <button className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group hover:bg-accent/10 transition-colors">
+                            <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
+                          </button>
+                        </Link>
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Live project</p>
                       </TooltipContent>
                     </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                {/* GitHub project button */}
-                <Link href={project.github} target='_blank'>
-                  <TooltipProvider delayDuration={100}>
+
+                    {/* GitHub Button */}
                     <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full flex bg-white/5 justify-center items-center group'>
-                        <BsGithub className='text-white text-3xl group-hover:text-accent ' />
+                      <TooltipTrigger asChild>
+                        <Link href={project.github} target="_blank">
+                          <button className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group hover:bg-accent/10 transition-colors">
+                            <BsGithub className="text-white text-2xl group-hover:text-accent" />
+                          </button>
+                        </Link>
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>GitHub repository</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                </Link>
+                </div>
               </div>
+            </div>
 
+            {/* Image Section */}
+            <div className="w-full xl:w-1/2">
+              <div className="h-[400px] relative group flex items-center justify-center bg-pink-50/20 rounded-lg overflow-hidden">
+                <div className="absolute inset-0 bg-black/10 z-10" />
+                <Image
+                  src={project.image}
+                  fill
+                  className="object-contain p-4"
+                  alt={`${project.title} preview`}
+                  sizes="(max-width: 1280px) 100vw, 50vw"
+                  priority={index === 0}
+                />
+              </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%] ">
-            <Swiper spaceBetween={30} slidesPerView={1}
-              className='xl:h-[520px] mb-12'
-              onSlideChange={handleSlideChange}
-            >
-              {Projects.map((item, index) => (
-                <SwiperSlide key={index}
-                  className='w-full'
-                >
-                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                    {/* overlay */}
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 "></div>
-                    {/* Image */}
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={item.image}
-                        fill
-                        className='object-contain'
-                        alt='Project Image'
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-              {/* Slider Buttons */}
-              <WorkSliderButtons
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_20px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:jusitfy-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-                iconsStyles="text-white text-2xl"
-              />
-            </Swiper>
-          </div>
-        </div>
+        ))}
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default Work
+export default Work;
